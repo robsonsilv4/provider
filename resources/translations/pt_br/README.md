@@ -1,25 +1,30 @@
 [English](../../../README.md) | [Português](./README.md)
 
+# Vidas Negras Importam. [Ajude a Iniciativa de Justiça Igualitária](https://support.eji.org/give/153413/#!/donation/checkout).
+
 [![Build Status](https://travis-ci.org/rrousselGit/provider.svg?branch=master)](https://travis-ci.org/rrousselGit/provider)
 [![pub package](https://img.shields.io/pub/v/provider.svg)](https://pub.dev/packages/provider) [![codecov](https://codecov.io/gh/rrousselGit/provider/branch/master/graph/badge.svg)](https://codecov.io/gh/rrousselGit/provider) [![Gitter](https://badges.gitter.im/flutter_provider/community.svg)](https://gitter.im/flutter_provider/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 [<img src="https://raw.githubusercontent.com/rrousselGit/provider/master/resources/flutter_favorite.png" width="200" />](https://flutter.dev/docs/development/packages-and-plugins/favorites)
 
-Uma mistura entre injeção de dependência (ID) e gerenciamento de estado, feito com widgets
-para widgets.
+Um wrapper sobre o [InheritedWidget](https://api.flutter.dev/flutter/widgets/InheritedWidget-class.html) para facilitar o seu uso e maior reusabilidade.
 
-O seu propósito é usar widgets para ID/gerenciamento de estado ao invés de somente classes do Dart como `Stream`.
-A razão é que, widgets são muito simples mas ainda assim robustos e escaláveis.
+Usando `provider` ao invés de escrever os [InheritedWidget] manualmente, você terá:
 
-Utilizando widgets para gerenciamento de estado, o `provider` pode garantir:
+- alocação e disposição simplificada dos recursos
+- carregamento sob demanda
+- grande redução de boilerplate ao invés de criar toda vez uma nova classe
+- devtools amigável
+- uma maneira comum de consumir esses [InheritedWidgets] (Veja [Provider.of]/[Consumer]/[Selector])
+- aumento da escalabilidade para classes com mecanismo de escuta que cresçam exponencialmente em complexidade (como [ChangeNotifier], que é O(N²) para envio de notificações)
 
-- manutenibilidade, através da imposição de um fluxo de dados unidirecional
-- testabilidade/composição, pois é sempre possível mockar/sobrescrever um
-  valor
-- robustez, já que é mais difícil esquecer de atualizar a estrutura de um
-  model/widget
+Para ler mais sobre o `provider`, veja a [documentação](https://pub.dev/documentation/provider/latest/provider/provider-library.html).
 
-Para ler mais sobre o `provider`, veja a [documentação](https://pub.dev/documentation/provider/latest/).
+See also:
+
+- [a documentação oficial sobre gerenciamento de estado no Flutter](https://flutter.dev/docs/development/data-and-backend/state-mgmt/simple), que mostra um exemplo de como usar o `provider` + [ChangeNotifier]
+- [flutter_architecture_sample](https://github.com/brianegan/flutter_architecture_samples/tree/master/change_notifier_provider), que contém uma implementação deste app usando provider + [ChangeNotifier]
+- [flutter_bloc](https://github.com/felangel/bloc) and [MobX](https://github.com/mobxjs/mobx.dart), que usam `provider` em sua arquitetura.
 
 ## Migração da v3.x.0 para v4.0.0
 
